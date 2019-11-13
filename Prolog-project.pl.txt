@@ -36,6 +36,10 @@ water_drinker(Drinker) :-
 	houses(Hs),
 	member(h(Drinker,_,_,water,_), Hs).
 
+english_pet(Pet) :-
+	houses(Hs),
+	member(h(english,Pet,_,_,_), Hs).
+
 
 houses(Hs) :-
 	% each house in the list Hs of houses is represented as:
@@ -57,6 +61,7 @@ houses(Hs) :-
 	next(h(norwegian,_,_,_,_), h(_,_,_,_,blue), Hs),          % 15
 	member(h(_,_,_,water,_), Hs),		% one of them drinks water
 	member(h(_,zebra,_,_,_), Hs).		% one of them owns a zebra
+	member(h(english,_,_,_,_), Hs).		% the english has a pet
 
 next(A, B, Ls) :- append(_, [A,B|_], Ls).
 next(A, B, Ls) :- append(_, [B,A|_], Ls).
